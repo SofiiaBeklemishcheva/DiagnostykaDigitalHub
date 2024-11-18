@@ -1,0 +1,195 @@
+<?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+abstract class Component extends Component
+{
+    
+    public $containerClass;
+
+    /**
+     *
+     * @param string $containerClass - Klasa CSS dla kontenera (wymagana).
+     */
+    public function __construct($containerClass = 'default-container')
+    {
+        $this->containerClass = $containerClass;
+    }
+
+    /**
+     * Metoda renderująca komponent.
+     * Klasa pochodna musi implementować tę metodę.
+     *
+     * @return string
+     */
+    abstract public function render();
+}
+<?php
+
+namespace App\View\Components;
+
+abstract class BaseFormInput extends Component
+{
+    public $id;
+    public $name;
+    public $label;
+    public $value;
+    public $isRequired;
+    public $inputFieldClass;
+    public $inputLabelClass;
+
+    public function __construct(
+        $id = null,
+        $name = null,
+        $label = null,
+        $value = null,
+        $isRequired = false,
+        $inputFieldClass = 'default-input-class',
+        $inputLabelClass = 'default-label-class',
+        $containerClass = 'default-container-class'
+    ) {
+        parent::__construct($containerClass);
+
+        $this->id = $id;
+        $this->name = $name;
+        $this->label = $label;
+        $this->value = $value;
+        $this->isRequired = $isRequired;
+        $this->inputFieldClass = $inputFieldClass;
+        $this->inputLabelClass = $inputLabelClass;
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+class SelectInput extends BaseFormInput
+{
+    public $options;
+
+    /**
+     * Konstruktor komponentu SelectInput.
+     *
+     * @param array $options - lista opcji select (klucz to wartość, tekst to tekst opcji)
+     * @param string|null $value - wartość domyślna
+     * @param bool $isRequired - czy pole jest wymagane
+     * @param string $inputFieldClass - klasa CSS dla pola input
+     * @param string $inputLabelClass - klasa CSS dla etykiety
+     * @param string $containerClass - klasa CSS dla kontenera (z `Component`)
+     */
+    public function __construct(
+        $options = [],
+        $value = null,
+        $isRequired = false,
+        $inputFieldClass = 'default-select-class',
+        $inputLabelClass = 'default-label-class',
+        $containerClass = 'default-container-class'
+    ) {
+        // Wywołanie konstruktora klasy bazowej, który ustawia wspólne właściwości
+        parent::__construct(null, null, null, $value, $isRequired, $inputFieldClass, $inputLabelClass, $containerClass);
+        
+        // Ustawienie opcji specyficznych dla SelectInput
+        $this->options = $options;
+    }
+
+    public function render()
+    {
+        return view('components.select-input');
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+class EmailInput extends BaseFormInput
+{
+    public function render()
+    {
+        return view('components.email-input');
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+class TextInput extends BaseFormInput
+{
+    public function render()
+    {
+        return view('components.text-input');
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+class TextareaInput extends BaseFormInput
+{
+    public function render()
+    {
+        return view('components.textarea-input');
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+use Illuminate\View\BaseFormInput;
+
+class DateInput extends BaseFormInput
+{
+    public function render()
+    {
+        return view('components.date-input');
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+class SubmitInput extends Component
+{
+    public $label;
+    public $attributes;
+
+    public function __construct(
+        $label = 'Submit',
+        $attributes = [],
+        $containerClass = 'default-container'
+    ) {
+        parent::__construct($containerClass);
+        $this->label = $label;
+        $this->attributes = $attributes;
+    }
+
+    public function render()
+    {
+        return view('components.submit-input');
+    }
+}
+<?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class FormBuilder extends Component
+{
+    public $action;
+    public $method;
+    public $fields;
+
+    public function __construct($action, $method = 'POST', $fields = [])
+    {
+        $this->action = $action;
+        $this->method = $method;
+        $this->fields = $fields;
+    }
+
+    public function render()
+    {
+        return view('components.form-builder');
+    }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +8,22 @@
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to Home Page</h1>
-    <form action="/submit-form" method="POST">
-        @csrf <!-- Zabezpieczenie formularza -->
+    <x-header
+        containerClass="header-container"
+        headerLabelClass="header-label"
+        headerLabel="Sweet-Corner"
+    />
 
-        <!-- Kolejne pola formularza -->
-        <x-date-input
-            id="appointment_date"
-            name="appointment_date"
-            label="Appointment Date"
-            value="{{ old('appointment_date') }}"
-            input-field-class="appointment-field"
-            input-label-class="appointment-label"
-            input-container-class="appointment-container"
-        />
+    <h1>Powiedz nam jaki tort chcesz, a my w ciągu 24 godzin skontaktujemy się z Tobą w celu złożenia zamówienia</h1>
 
-        <button type="submit">Submit</button>
-    </form>
+
+
+    <x-footer 
+    :name="old('name')" 
+    :email="old('email')" 
+    :message="old('message')" 
+    containerClass="footer-container"
+/>
 </div>
 </body>
 </html>
