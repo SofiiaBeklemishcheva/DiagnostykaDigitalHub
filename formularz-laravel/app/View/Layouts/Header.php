@@ -1,10 +1,12 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Layouts;
 
-class Header extends Component
+use App\View\Components\BaseComponent;
+
+class Header extends BaseComponent
 {
-    public $containerClass;
+    public string $containerClass;
     public $headerLabelClass;
     public $headerLabel;
 
@@ -19,8 +21,8 @@ class Header extends Component
      */
     public function __construct(
         $containerClass = 'default-container-class',
-        $headerLabelClass = 'default-header-label-class',
-        $headerLabel = 'Default Header'
+        ?string $headerLabelClass = 'default-header-label-class',
+        ?string $headerLabel = 'Default Header'
     ) {
         $this->containerClass = $containerClass;
         $this->headerLabelClass = $headerLabelClass;

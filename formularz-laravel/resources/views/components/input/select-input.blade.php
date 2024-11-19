@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/components/input/select-input.css') }}">
 <div class="{{ $containerClass }}">
     {!! $this->renderLabel() !!}
     <select id="{{ $id }}" name="{{ $name }}" class="{{ $inputFieldClass }}" {{ $this->renderRequired() }}>

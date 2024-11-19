@@ -1,0 +1,10 @@
+.container{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+.simple-text{
+    font-size: var(--fontSizeDeafault);
+    font-weight: var(--fontWeightNormal);
+    color: var(--fontColor);
+}

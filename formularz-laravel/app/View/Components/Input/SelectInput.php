@@ -1,6 +1,8 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Input;
+
+use App\View\Components\Input\BaseFormInput;
 
 class SelectInput extends BaseFormInput
 {
@@ -26,13 +28,20 @@ class SelectInput extends BaseFormInput
     ) {
         // Wywołanie konstruktora klasy bazowej, który ustawia wspólne właściwości
         parent::__construct(null, null, null, $value, $isRequired, $inputFieldClass, $inputLabelClass, $containerClass);
-        
+
         // Ustawienie opcji specyficznych dla SelectInput
         $this->options = $options;
     }
 
     public function render()
     {
-        return view('components.select-input');
+        return view('components.input.select-input', [
+            'options' => $this->options,
+            'value' => $this->value,
+            'isRequired' => $this->isRequired,
+            'inputFieldClass' => $this->inputFieldClass,
+            'inputLabelClass' => $this->inputLabelClass,
+            'containerClass' => $this->containerClass
+        ]);
     }
 }

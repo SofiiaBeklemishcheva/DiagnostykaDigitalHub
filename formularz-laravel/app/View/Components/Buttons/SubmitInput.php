@@ -1,24 +1,29 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Buttons;
 
-class SubmitInput extends Component
+use App\View\Components\BaseComponent;
+use Illuminate\View\ComponentAttributeBag;
+
+class SubmitInput extends BaseComponent
 {
     public $label;
     public $attributes;
 
     public function __construct(
-        $label = 'Submit',
-        $attributes = [],
+        $label = 'Wyślij',
+        $attributes = null,  // Przyjmujemy null
         $containerClass = 'default-container'
     ) {
         parent::__construct($containerClass);
         $this->label = $label;
-        $this->attributes = $attributes;
+        $this->attributes = $attributes instanceof ComponentAttributeBag
+            ? $attributes
+            : new ComponentAttributeBag($attributes ?? []); // Używamy ComponentAttributeBag
     }
 
     public function render()
     {
-        return view('components.submit-input');
+        return view('components.buttons.submit-input');
     }
 }

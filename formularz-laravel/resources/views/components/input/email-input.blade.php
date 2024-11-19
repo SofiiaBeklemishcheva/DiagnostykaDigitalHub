@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/components/input/email-input.css') }}">
 <div class="{{ $inputContainerClass }}">
     <label for="{{ $id }}" class="{{ $inputLabelClass }}">
         {{ $label }}
@@ -6,7 +7,8 @@
         type="email"
         id="{{ $id }}"
         name="{{ $name }}"
-        value="{{ $value }}"
+        value="{{ old($name, $value) }}"
         class="{{ $inputFieldClass }}"
+        @if($isRequired) required @endif
     />
 </div>

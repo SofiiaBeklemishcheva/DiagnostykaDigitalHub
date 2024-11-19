@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="{{ asset('css/components/input/select-input.css') }}">
 <div class="{{ $inputContainerClass }}">
     <label for="{{ $id }}" class="{{ $inputLabelClass }}">
         {{ $label }}
     </label>
-    <input
-        type="textarea"
+    <textarea
         id="{{ $id }}"
         name="{{ $name }}"
-        value="{{ $value }}"
         class="{{ $inputFieldClass }}"
-    />
+        @if($isRequired) required @endif
+    >{{ $value }}</textarea>
 </div>
+

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/components/input/date-input.css') }}">
 <div class="{{ $inputContainerClass }}">
     <label for="{{ $id }}" class="{{ $inputLabelClass }}">
         {{ $label }}

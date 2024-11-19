@@ -1,0 +1,23 @@
+.header-container{
+    padding-top: 36px;
+    height: 120px;
+    background-color: var(--myPuple);
+    display: flex;
+    align-items: flex-start;
+}
+.header-label{
+    font-size: var(--fontSizeHeader);
+    font-weight: var(--fontWeightBold);
+    margin: 10px;
+    background-color: var(--mint);
+    border: 1px var(--darkGreen);
+    border-radius: 20px;
+    height: 50px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--fontColor);
+}
+
+

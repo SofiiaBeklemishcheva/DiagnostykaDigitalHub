@@ -1,35 +1,31 @@
 <?php
+namespace App\View\Components\Input;
 
-namespace App\View\Components;
-
-abstract class BaseFormInput extends Component
+class BaseFormInput
 {
-    public $id;
-    public $name;
-    public $label;
-    public $value;
-    public $isRequired;
-    public $inputFieldClass;
+    public $inputContainerClass;
     public $inputLabelClass;
+    public $inputFieldClass;
+    public $id;
+    public $label;
+    public $name;
+    public $value;
 
     public function __construct(
-        $id = null,
-        $name = null,
-        $label = null,
-        $value = null,
-        $isRequired = false,
-        $inputFieldClass = 'default-input-class',
-        $inputLabelClass = 'default-label-class',
-        $containerClass = 'default-container-class'
+        $inputContainerClass = '',
+        $inputLabelClass = '',
+        $inputFieldClass = '',
+        $id = '',
+        $label = '',
+        $name = '',
+        $value = ''
     ) {
-        parent::__construct($containerClass);
-
-        $this->id = $id;
-        $this->name = $name;
-        $this->label = $label;
-        $this->value = $value;
-        $this->isRequired = $isRequired;
-        $this->inputFieldClass = $inputFieldClass;
+        $this->inputContainerClass = $inputContainerClass;
         $this->inputLabelClass = $inputLabelClass;
+        $this->inputFieldClass = $inputFieldClass;
+        $this->id = $id;
+        $this->label = $label;
+        $this->name = $name;
+        $this->value = $value;
     }
 }

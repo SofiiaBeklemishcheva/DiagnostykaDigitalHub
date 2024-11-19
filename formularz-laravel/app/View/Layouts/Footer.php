@@ -1,8 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Layouts;
 
-class Footer extends Component
+use App\View\Components\BaseComponent;
+
+class Footer extends BaseComponent
 {
     public $name;
     public $email;
@@ -23,6 +25,6 @@ class Footer extends Component
 
     public function render()
     {
-        return view('components.footer');
+        return view('layouts.footer');
     }
 }

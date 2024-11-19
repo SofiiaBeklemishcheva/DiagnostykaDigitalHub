@@ -1,11 +1,42 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Input;
 
-class TextareaInput extends BaseFormInput
+use Illuminate\View\Component;
+
+class TextareaInput extends Component
 {
+    public $id;
+    public $name;
+    public $label;
+    public $value;
+    public $inputContainerClass;
+    public $inputLabelClass;
+    public $inputFieldClass;
+    public bool $isRequired;
+
+    public function __construct(
+        $id,
+        $name,
+        $label,
+        $value = null,
+        $inputContainerClass = '',
+        $inputLabelClass = '',
+        $inputFieldClass = '',
+        $isRequired = false // Dodanie wartości domyślnej
+    ) {
+        $this->id = $id;
+        $this->name = $name;
+        $this->label = $label;
+        $this->value = $value;
+        $this->inputContainerClass = $inputContainerClass;
+        $this->inputLabelClass = $inputLabelClass;
+        $this->inputFieldClass = $inputFieldClass;
+        $this->isRequired = $isRequired; // Przypisanie wartości do $isRequired
+    }
+
     public function render()
     {
-        return view('components.textarea-input');
+        return view('components.input.textarea-input');
     }
 }

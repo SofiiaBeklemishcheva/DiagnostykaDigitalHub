@@ -1,13 +1,14 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Input;
 
-use Illuminate\View\BaseFormInput;
+use App\View\Components\Input\BaseFormInput;
+
 
 class DateInput extends BaseFormInput
 {
     public function render()
     {
-        return view('components.date-input');
+        return view('components.input.date-input');
     }
 }

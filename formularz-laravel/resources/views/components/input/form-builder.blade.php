@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="{{ asset('css/components/input/form-builder.css') }}">
 <form action="{{ $action }}" method="{{ $method }}">
     @foreach ($fields as $field)
         @if (class_exists($field['component']))
-            <x-dynamic-component 
+            <x-dynamic-component
                 :component="$field['component']"
                 :id="$field['id'] ?? null"
                 :name="$field['name'] ?? null"
