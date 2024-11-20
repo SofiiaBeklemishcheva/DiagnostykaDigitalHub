@@ -23,7 +23,7 @@ class EmailInput extends Component
         $inputContainerClass = '',
         $inputLabelClass = '',
         $inputFieldClass = '',
-        $isRequired = false // Dodajemy domyślną wartość
+        $isRequired = false
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -32,7 +32,7 @@ class EmailInput extends Component
         $this->inputContainerClass = $inputContainerClass;
         $this->inputLabelClass = $inputLabelClass;
         $this->inputFieldClass = $inputFieldClass;
-        $this->isRequired = $isRequired; // Przypisujemy wartość do $isRequired
+        $this->isRequired = $isRequired;
     }
 
     public function render()

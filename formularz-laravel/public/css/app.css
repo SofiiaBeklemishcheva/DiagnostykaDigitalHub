@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --myPuple: #78586F;
+    --myMint: #81D8D0;
+    --myDarkGreen: #0B3948;
+    --white: #EDE3E9;
+    --red: #FB5012;
+    --fontSizeDeafault: 18px;
+    --fontSizeFooter: 20px;
+    --fontSizeSmall: 10px;
+    --fontSizeHeader: 24px;
+    --fontWeightBold: 700;
+    --fontWeightNormal: 400;
+    --fontFamily: Inter;
+    --fontColor: #0B3948;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    margin: 0;
+}
+

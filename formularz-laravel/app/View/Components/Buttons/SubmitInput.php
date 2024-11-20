@@ -12,14 +12,14 @@ class SubmitInput extends BaseComponent
 
     public function __construct(
         $label = 'Wyślij',
-        $attributes = null,  // Przyjmujemy null
+        $attributes = null,
         $containerClass = 'default-container'
     ) {
         parent::__construct($containerClass);
         $this->label = $label;
         $this->attributes = $attributes instanceof ComponentAttributeBag
             ? $attributes
-            : new ComponentAttributeBag($attributes ?? []); // Używamy ComponentAttributeBag
+            : new ComponentAttributeBag($attributes ?? []);
     }
 
     public function render()

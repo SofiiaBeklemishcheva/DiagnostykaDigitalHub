@@ -1,40 +1,45 @@
-<div class="{{ $containerClass }}">
-    <!-- Formularz kontaktowy -->
+<link rel="stylesheet" href="{{ asset('css/components/forms/contact-form.css') }}">
+<form class="form-container" action="{{ route('contact.submit') }}" method="POST">
     @csrf
 
-    <!-- Imię -->
     <x-input.text-input
         id="name"
         name="name"
-        label="Imię"
+        label="Imię:"
         :value="old('name', $name)"
-        :inputContainerClass="'custom-input-container'"
-        :inputFieldClass="'custom-input-class'"
-        :inputLabelClass="'custom-label-class'"
+        :inputContainerClass="'footer-form-input-container'"
+        :inputFieldClass="'footer-form-input-field'"
+        :inputLabelClass="'footer-form-label'"
         :isRequired="true"
     />
 
-    <!-- Email -->
     <x-input.email-input
         id="email"
         name="email"
-        label="Email"
+        label="Email:"
         :value="old('email', $email)"
-        :inputContainerClass="'custom-container'"
-        :inputLabelClass="'custom-label'"
-        :inputFieldClass="'custom-input'"
+        :inputContainerClass="'footer-form-input-container'"
+        :inputLabelClass="'footer-form-label'"
+        :inputFieldClass="'footer-form-input-field'"
         :isRequired="true"
     />
 
-    <!-- Wiadomość -->
     <x-input.textarea-input
         id="textarea1"
         name="message"
-        label="Opis"
+        label="Opis:"
         value="{{ old('message') }}"
+        inputContainerClass="footer-form-input-container"
+        inputLabelClass="footer-form-label"
+        inputFieldClass="footer-form-input-field-textarea"
         :isRequired="true"
     />
 
-    <!-- Przycisk wysyłania -->
-    <x-buttons.submit-input label="Wyślij formularz" class="btn-primary" />
-</div>
+    <x-buttons.submit-input label="Wyślij formularz" class="footer-form-submit-button" />
+    @if (session('success'))
+        <div class="alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+</form>

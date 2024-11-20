@@ -23,7 +23,7 @@ class TextareaInput extends Component
         $inputContainerClass = '',
         $inputLabelClass = '',
         $inputFieldClass = '',
-        $isRequired = false // Dodanie wartości domyślnej
+        $isRequired = false
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -32,7 +32,7 @@ class TextareaInput extends Component
         $this->inputContainerClass = $inputContainerClass;
         $this->inputLabelClass = $inputLabelClass;
         $this->inputFieldClass = $inputFieldClass;
-        $this->isRequired = $isRequired; // Przypisanie wartości do $isRequired
+        $this->isRequired = $isRequired;
     }
 
     public function render()

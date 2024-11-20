@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Validator;
 class NameInputHelper
 {
     /**
-     * Walidacja imienia.
-     *
      * @param string $name
      * @return \Illuminate\Contracts\Validation\Validator
      */

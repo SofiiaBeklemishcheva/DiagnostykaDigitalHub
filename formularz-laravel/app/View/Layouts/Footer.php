@@ -10,7 +10,6 @@ class Footer extends BaseComponent
     public $email;
     public $message;
 
-    // Konstruktor komponentu Footer
     public function __construct(
         $name = null,
         $email = null,

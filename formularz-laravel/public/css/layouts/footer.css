@@ -1,0 +1,16 @@
+.footer-container{
+    display: flex;
+    height: 330px;
+    background-color: #78586F;
+}
+.footer-label{
+    margin: 10px;
+    color: var(--myDarkGreen);
+    font-weight: var(--fontWeightBold);
+    font-size: var(--fontSizeFooter);
+}
+.footer-form-container{
+background-color: var(--myPuple);
+    height: 250px;
+    display: flex;
+}

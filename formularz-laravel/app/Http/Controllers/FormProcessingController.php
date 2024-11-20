@@ -9,7 +9,7 @@ class FormProcessingController extends Controller
 {
     protected $formProcessingService;
 
-    // Wstrzykujemy usługę
+
     public function __construct(FormProcessingService $formProcessingService)
     {
         $this->formProcessingService = $formProcessingService;
@@ -17,15 +17,38 @@ class FormProcessingController extends Controller
 
     public function submitForm(Request $request)
     {
-        // Wywołanie usługi, która zajmuje się walidacją i przetwarzaniem formularza
+
         $result = $this->formProcessingService->process($request);
 
         if ($result['status'] === 'error') {
-            // Jeśli wystąpiły błędy walidacji, przekazujemy je do widoku
+
             return back()->withErrors($result['errors']);
         }
 
-        // Komunikat o sukcesie
-        return back()->with('success', $result['message']);
+        return back()->with('success', 'Dane przesłano pomyślnie');
+
+    }
+
+    public function submitCakeOrder(Request $request)
+    {
+        $validatedData = $request->validate([
+            'order_date' => 'required|date|after:today',
+            'customer_name' => 'required|string|max:255',
+            'customer_email' => 'required|email',
+            'biszkopt' => 'required|string|in:vanilla,chocolate,red_velvet',
+            'krem' => 'required|string|in:buttercream,whipped_cream,chocolate',
+            'nadzienie' => 'required|string|in:fruits,chocolate,cream',
+            'waga' => 'required|integer|in:1,2,3,4',
+            'budzet' => 'required|string|in:100-200,200-300,300-400',
+            'wykonczenie' => 'nullable|string|max:1000',
+        ]);
+
+        $result = $this->formProcessingService->process($validatedData);
+
+        if ($result['status'] === 'error') {
+            return back()->withErrors($result['errors']);
+        }
+
+        return back()->with('success', 'Twoje zamówienie zostało złożone pomyślnie!');
     }
 }

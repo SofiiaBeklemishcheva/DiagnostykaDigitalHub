@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Validator;
 class EmailInputHelper
 {
     /**
-     * Walidacja emaila.
-     *
      * @param string $email
      * @return \Illuminate\Contracts\Validation\Validator
      */

@@ -19,7 +19,7 @@ class ContactForm extends Component
 
     public function render()
     {
-        return view('components.forms.contact-form');  // Poprawiona ścieżka
+        return view('components.forms.contact-form');
     }
 
 }

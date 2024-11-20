@@ -9,14 +9,12 @@ use Illuminate\Support\Facades\Validator;
 
 class FormProcessingService
 {
-    public function process($request)
+    public function process($data)
     {
-        // Walidacja danych przy użyciu helperów
-        $emailValidation = EmailInputHelper::validateEmail($request->email);
-        $nameValidation = NameInputHelper::validateName($request->name);
-        $messageValidation = MessageInputHelper::validateMessage($request->message);
+        $emailValidation = EmailInputHelper::validateEmail($data['customer_email']);
+        $nameValidation = NameInputHelper::validateName($data['customer_name']);
+        $messageValidation = MessageInputHelper::validateMessage($data['wykonczenie']);
 
-        // Zwracamy błędy, jeśli którakolwiek walidacja się nie powiedzie
         if ($emailValidation->fails() || $nameValidation->fails() || $messageValidation->fails()) {
             return [
                 'status' => 'error',
@@ -24,16 +22,13 @@ class FormProcessingService
                     $emailValidation->errors()->toArray(),
                     $nameValidation->errors()->toArray(),
                     $messageValidation->errors()->toArray()
-                )
+                ),
             ];
         }
-
-        // Możemy dodać logikę przetwarzania danych (np. wysyłanie e-maila)
-        // Mail::to('admin@example.com')->send(new ContactFormMail($request));
-
         return [
             'status' => 'success',
-            'message' => 'Twoja wiadomość została wysłana!'
+            'message' => 'Twoja wiadomość została wysłana!',
         ];
     }
+
 }

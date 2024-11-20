@@ -1,0 +1,15 @@
+.page-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.content-container{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    font-size: var(--fontSizeHeader);
+    font-weight: var(--fontWeightNormal);
+    color: var(--fontColor);
+}

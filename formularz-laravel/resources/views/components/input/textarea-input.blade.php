@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('css/components/input/select-input.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/input/textarea-input.css') }}">
 <div class="{{ $inputContainerClass }}">
     <label for="{{ $id }}" class="{{ $inputLabelClass }}">
         {{ $label }}
