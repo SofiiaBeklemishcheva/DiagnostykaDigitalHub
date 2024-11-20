@@ -1,0 +1,69 @@
+.cake-order-form-input-container{
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    margin:10px;
+    border: 1px solid var(--myDarkGreen);
+    height: 60px;
+    border-radius: 20px;
+    padding: 5px;
+}
+.cake-order-form-input-field{
+    all: unset;
+width: 800px;
+    background-color: var(--white);
+    font-size: var(--fontSizeDeafault);
+    color: var(--myDarkGreen);
+}
+.cake-order-form-label{
+    display: flex;
+width: 200px;
+    font-size: var(--fontSizeDeafault);
+    font-weight: var(--fontWeightBold);
+    color: var(--myDarkGreen);
+}
+.cake-order-form-select-field{
+    all: unset;
+    width: 800px;
+    background-color: var(--white);
+    font-size: var(--fontSizeDeafault);
+    color: var(--myDarkGreen);
+}
+.cake-order-form-textarea-field{
+    all: unset;
+    width: 800px;
+    height: 50px;
+    background-color: var(--white);
+    font-size: var(--fontSizeDeafault);
+    color: var(--myDarkGreen);
+}
+.cake-order-form-submit-button{
+    margin: 10px;
+    padding: 5px;
+width: 150px;
+    height: 80px;
+    border: 1px solid var(--myDarkGreen);
+    border-radius: 20px;
+    background-color: var(--myMint);
+    color: var(--myDarkGreen);
+    font-size: var(--fontSizeHeader);
+    font-weight: var(--fontWeightBold);
+    cursor: pointer;
+}
+.cake-order-form-submit-button:hover{
+    background-color: #579791;
+}
+.cake-order-form-success-message{
+    border: 1px solid var(--myDarkGreen);
+    border-radius: 20px;
+    background-color: var(--myMint);
+    color: var(--myDarkGreen);
+    font-size: var(--fontSizeHeader);
+    font-weight: var(--fontWeightBold);
+    height: 35px;
+    padding: 5px;
+    margin: 10px;
+}
+.cake-order-form-error-message{
+
+}
